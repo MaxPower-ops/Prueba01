@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Chaparro, Analía G." />
+
+<meta name="date" content="2023-09-19" />
+
+<title>Función normal segunda parte</title>
+
+<script src="Funcion-normal-segunda-parte_files/header-attrs-2.29/header-attrs.js"></script>
+<script src="Funcion-normal-segunda-parte_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Funcion-normal-segunda-parte_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Funcion-normal-segunda-parte_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Funcion-normal-segunda-parte_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Funcion-normal-segunda-parte_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="Funcion-normal-segunda-parte_files/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="Funcion-normal-segunda-parte_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="Funcion-normal-segunda-parte_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="Funcion-normal-segunda-parte_files/navigation-1.1/tabsets.js"></script>
+<script src="Funcion-normal-segunda-parte_files/kePrint-0.0.1/kePrint.js"></script>
+<link href="Funcion-normal-segunda-parte_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Función normal segunda parte</h1>
+<h4 class="author">Chaparro, Analía G.</h4>
+<h4 class="date">2023-09-19</h4>
+
+</div>
+
+
+<style type="text/css">
+.watch-out {
+  background-color: #E8EAF6;
+  border: 3px solid #283593;
+  font-weight: bold;
+}
+.fondo-salida{
+  background-color: #E3F2FD ;
+}
+
+</style>
+<div id="valores-aleatorios-de-una-distribución-normal"
+class="section level2">
+<h2>Valores aleatorios de una distribución normal</h2>
+<p>Supongamos que tenemos una distribución normal con media 0 y desvío
+1. La variable aleatoria, toma infinitos valores entre <span
+class="math inline">\((-\infty;\infty)\)</span>.</p>
+<p>Vamos a tomar 10 valores de la variables aleatoria en forma
+aleatoria.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
+<pre class="fondo-salida"><code>##  [1]  1.66393514 -0.03454867 -0.87091375 -0.67718207  0.15314271 -1.91904087
+##  [7]  1.68792468 -0.29008091  2.06632010  1.82830985</code></pre>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co">#tamaño de la muestra</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>muestra <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>muestra</span></code></pre></div>
+<pre class="fondo-salida"><code>##  [1] -0.1598782 -1.8311445 -0.9112628  0.1859535 -0.6127159  0.6982681
+##  [7]  0.1702459 -1.3842398  0.5621496  0.5105721</code></pre>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co">#Convertimos la muestra en un dataframe</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>muestra <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(muestra)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>muestra <span class="ot">&lt;-</span> muestra <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(muestra)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>muestra</span></code></pre></div>
+<pre class="fondo-salida"><code>##       muestra
+## 1  -1.8311445
+## 2  -1.3842398
+## 3  -0.9112628
+## 4  -0.6127159
+## 5  -0.1598782
+## 6   0.1702459
+## 7   0.1859535
+## 8   0.5105721
+## 9   0.5621496
+## 10  0.6982681</code></pre>
+<p>Para cada valor en la muestra vamos a calcular su probabilidad con
+pnorm.</p>
+<p>Para ello, al dataframe le agregamos una columna que se llame
+probabilidad. Sugerencia, utilizar la funcion mutate().</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> muestra <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Probabilidad =</span> <span class="fu">pnorm</span>(muestra,<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>data</span></code></pre></div>
+<pre class="fondo-salida"><code>##       muestra Probabilidad
+## 1  -1.8311445   0.03353949
+## 2  -1.3842398   0.08314252
+## 3  -0.9112628   0.18107846
+## 4  -0.6127159   0.27003209
+## 5  -0.1598782   0.43648850
+## 6   0.1702459   0.56759160
+## 7   0.1859535   0.57375939
+## 8   0.5105721   0.69517464
+## 9   0.5621496   0.71299295
+## 10  0.6982681   0.75749523</code></pre>
+<p>Calculamos la densidad para cada punto y se lo agregamos al
+dataframe</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Densidad =</span> <span class="fu">dnorm</span>(muestra,<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>data </span></code></pre></div>
+<pre class="fondo-salida"><code>##       muestra Probabilidad   Densidad
+## 1  -1.8311445   0.03353949 0.07460978
+## 2  -1.3842398   0.08314252 0.15304880
+## 3  -0.9112628   0.18107846 0.26338499
+## 4  -0.6127159   0.27003209 0.33066518
+## 5  -0.1598782   0.43648850 0.39387603
+## 6   0.1702459   0.56759160 0.39320257
+## 7   0.1859535   0.57375939 0.39210411
+## 8   0.5105721   0.69517464 0.35018963
+## 9   0.5621496   0.71299295 0.34063471
+## 10  0.6982681   0.75749523 0.31263225</code></pre>
+<p>Mostramos en tabla el dataframe</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> F)</span></code></pre></div>
+<table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+muestra
+</th>
+<th style="text-align:right;">
+Probabilidad
+</th>
+<th style="text-align:right;">
+Densidad
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+-1.8311445
+</td>
+<td style="text-align:right;">
+0.0335395
+</td>
+<td style="text-align:right;">
+0.0746098
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-1.3842398
+</td>
+<td style="text-align:right;">
+0.0831425
+</td>
+<td style="text-align:right;">
+0.1530488
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-0.9112628
+</td>
+<td style="text-align:right;">
+0.1810785
+</td>
+<td style="text-align:right;">
+0.2633850
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-0.6127159
+</td>
+<td style="text-align:right;">
+0.2700321
+</td>
+<td style="text-align:right;">
+0.3306652
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-0.1598782
+</td>
+<td style="text-align:right;">
+0.4364885
+</td>
+<td style="text-align:right;">
+0.3938760
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.1702459
+</td>
+<td style="text-align:right;">
+0.5675916
+</td>
+<td style="text-align:right;">
+0.3932026
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.1859535
+</td>
+<td style="text-align:right;">
+0.5737594
+</td>
+<td style="text-align:right;">
+0.3921041
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.5105721
+</td>
+<td style="text-align:right;">
+0.6951746
+</td>
+<td style="text-align:right;">
+0.3501896
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.5621496
+</td>
+<td style="text-align:right;">
+0.7129930
+</td>
+<td style="text-align:right;">
+0.3406347
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.6982681
+</td>
+<td style="text-align:right;">
+0.7574952
+</td>
+<td style="text-align:right;">
+0.3126323
+</td>
+</tr>
+</tbody>
+</table>
+<p>Calculamos el desvío y la media de la muestra</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>x_raya <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>muestra)</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>s_d <span class="ot">&lt;-</span> <span class="fu">sd</span>(data<span class="sc">$</span>muestra)</span></code></pre></div>
+<p>Lo presentamos en un cuadro de salida</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>resumen_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Tamaño<span class="at">_muestral=</span>n,<span class="at">Media_muestral=</span>x_raya,<span class="at">Desvio_muestral=</span>s_d)</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>resumen_data <span class="ot">&lt;-</span> resumen_data <span class="sc">%&gt;%</span> </span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Numero_muestra=</span><span class="fu">nrow</span>(resumen_data))</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co">#reordeno</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>resumen_data <span class="ot">&lt;-</span> resumen_data <span class="sc">%&gt;%</span> </span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>  <span class="fu">select</span>(Numero_muestra,Tamaño_muestral,Media_muestral,Desvio_muestral)</span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>resumen_data <span class="sc">%&gt;%</span> </span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> F)</span></code></pre></div>
+<table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+Numero_muestra
+</th>
+<th style="text-align:right;">
+Tamaño_muestral
+</th>
+<th style="text-align:right;">
+Media_muestral
+</th>
+<th style="text-align:right;">
+Desvio_muestral
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+-0.2772052
+</td>
+<td style="text-align:right;">
+0.8730535
+</td>
+</tr>
+</tbody>
+</table>
+<p>Graficamos la probabilidad vs los cuantiles</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>muestra,<span class="at">y=</span>Probabilidad))<span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>g1</span></code></pre></div>
+<p><img src="Funcion-normal-segunda-parte_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Graficamos la densidad en funcion de los puntos muestrales.</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>muestra,<span class="at">y=</span>Densidad))<span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> x_raya)</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>g2</span></code></pre></div>
+<p><img src="Funcion-normal-segunda-parte_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Repetimos todo, tomando 10 muestras de tamaño 100.</p>
+<p>Necesitamos de una función que nos ayude con las muestras y organice
+un dataframe que registre para cada muestra tomada, su media y
+desvío.</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>resumen<span class="ot">=</span><span class="cf">function</span>(n,mu,sigma){</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>  muestra<span class="ot">=</span><span class="fu">rnorm</span>(n,mu,sigma)</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>  media_muestral<span class="ot">=</span><span class="fu">mean</span>(muestra)</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>  desvio_muestral<span class="ot">=</span><span class="fu">sd</span>(muestra)</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>  <span class="fu">return</span>(<span class="at">salida=</span><span class="fu">data.frame</span>(<span class="at">media_muestral=</span>media_muestral,<span class="at">desvio_muestral=</span>desvio_muestral))</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">resumen</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">resumen</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">resumen</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">resumen</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>m5 <span class="ot">&lt;-</span> <span class="fu">resumen</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>m6 <span class="ot">&lt;-</span> <span class="fu">resumen</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>m7 <span class="ot">&lt;-</span> <span class="fu">resumen</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>m8 <span class="ot">&lt;-</span> <span class="fu">resumen</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>m9 <span class="ot">&lt;-</span> <span class="fu">resumen</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a>m10 <span class="ot">&lt;-</span> <span class="fu">resumen</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">rbind</span>(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10)</span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a>res <span class="ot">&lt;-</span> res <span class="sc">%&gt;%</span> </span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">muestra_numero=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(res)) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(media_muestral)</span>
+<span id="cb18-15"><a href="#cb18-15" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="#cb18-16" tabindex="-1"></a>res <span class="sc">%&gt;%</span> </span>
+<span id="cb18-17"><a href="#cb18-17" tabindex="-1"></a>  <span class="fu">kbl</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb18-18"><a href="#cb18-18" tabindex="-1"></a>    <span class="fu">kable_styling</span>(<span class="at">full_width =</span> F)</span></code></pre></div>
+<table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+media_muestral
+</th>
+<th style="text-align:right;">
+desvio_muestral
+</th>
+<th style="text-align:right;">
+muestra_numero
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+-0.2062770
+</td>
+<td style="text-align:right;">
+0.9682540
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-0.0450118
+</td>
+<td style="text-align:right;">
+1.0595393
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-0.0320437
+</td>
+<td style="text-align:right;">
+0.9996589
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-0.0117769
+</td>
+<td style="text-align:right;">
+1.0105258
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-0.0014888
+</td>
+<td style="text-align:right;">
+0.9752009
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.0104717
+</td>
+<td style="text-align:right;">
+1.0639763
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.0244895
+</td>
+<td style="text-align:right;">
+1.0879497
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.1139295
+</td>
+<td style="text-align:right;">
+1.1032260
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.1253598
+</td>
+<td style="text-align:right;">
+1.0810817
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.1427205
+</td>
+<td style="text-align:right;">
+1.0175417
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<p>Graficamos un histograma de las medias…</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> res, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>media_muestral))<span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..),</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>                 <span class="at">colour =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">lwd =</span> <span class="dv">1</span>,<span class="at">colour=</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>g</span></code></pre></div>
+<pre><code>## Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
+## i Please use `after_stat(density)` instead.
+## This warning is displayed once per session.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<p><img src="Funcion-normal-segunda-parte_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>Qué pasa si queremos repetir este proceso 100 veces? tomar 100
+muestras de tamaño 10 o de tamaño 100 o de tamaño 1000?</p>
+</div>
+<div id="simulación-de-una-variable-aleatoria-especial"
+class="section level2">
+<h2>Simulación de una variable aleatoria especial</h2>
+<p>Definamos una función que haga esta simulación…</p>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># Definimos la función que realiza las iteraciones</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>simulacion <span class="ot">&lt;-</span> <span class="cf">function</span>(I, n, mu, sigma) {</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>  <span class="co">#En primer lugar, definimos la función resumen, dentro de la funcion generalizadora</span></span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a>  </span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a>  resumen<span class="ot">=</span><span class="cf">function</span>(n,mu,sigma){</span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a>  muestra<span class="ot">=</span><span class="fu">rnorm</span>(n,mu,sigma)</span>
+<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a>  media_muestral<span class="ot">=</span><span class="fu">mean</span>(muestra)</span>
+<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a>  desvio_muestral<span class="ot">=</span><span class="fu">sd</span>(muestra)</span>
+<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a>  <span class="fu">return</span>(<span class="at">salida=</span><span class="fu">data.frame</span>(<span class="at">media_muestral=</span>media_muestral,<span class="at">desvio_muestral=</span>desvio_muestral))</span>
+<span id="cb22-10"><a href="#cb22-10" tabindex="-1"></a>}</span>
+<span id="cb22-11"><a href="#cb22-11" tabindex="-1"></a>  </span>
+<span id="cb22-12"><a href="#cb22-12" tabindex="-1"></a>  </span>
+<span id="cb22-13"><a href="#cb22-13" tabindex="-1"></a>  <span class="co"># Creaamos un Dataframe vacío para almacenar los resultados</span></span>
+<span id="cb22-14"><a href="#cb22-14" tabindex="-1"></a>  resultado <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<span id="cb22-15"><a href="#cb22-15" tabindex="-1"></a>  <span class="co"># Creamos un ciclo for que en cada iteracción, genere una muestra y calcule</span></span>
+<span id="cb22-16"><a href="#cb22-16" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>I) {</span>
+<span id="cb22-17"><a href="#cb22-17" tabindex="-1"></a>    <span class="co"># Llamamos a la función resumen y obtenemos el dataframe en cada iteracion</span></span>
+<span id="cb22-18"><a href="#cb22-18" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">resumen</span>(n, mu, sigma)</span>
+<span id="cb22-19"><a href="#cb22-19" tabindex="-1"></a>    <span class="co"># Unificamos el Dataframe actual con el dataframe vacío llamado resultado</span></span>
+<span id="cb22-20"><a href="#cb22-20" tabindex="-1"></a>    resultado <span class="ot">&lt;-</span> <span class="fu">rbind</span>(resultado, df)</span>
+<span id="cb22-21"><a href="#cb22-21" tabindex="-1"></a>    </span>
+<span id="cb22-22"><a href="#cb22-22" tabindex="-1"></a>  }</span>
+<span id="cb22-23"><a href="#cb22-23" tabindex="-1"></a>  </span>
+<span id="cb22-24"><a href="#cb22-24" tabindex="-1"></a>  <span class="co"># Reiniciamos los índices del Dataframe resultado</span></span>
+<span id="cb22-25"><a href="#cb22-25" tabindex="-1"></a>  <span class="fu">rownames</span>(resultado) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb22-26"><a href="#cb22-26" tabindex="-1"></a>  <span class="co"># Agregamos una columna con el tamaño muestral</span></span>
+<span id="cb22-27"><a href="#cb22-27" tabindex="-1"></a>  resultado <span class="ot">&lt;-</span> resultado <span class="sc">%&gt;%</span> </span>
+<span id="cb22-28"><a href="#cb22-28" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">Muestreo_numero=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(resultado))</span>
+<span id="cb22-29"><a href="#cb22-29" tabindex="-1"></a>  <span class="co">#Reordenamos las columnas del dataframe</span></span>
+<span id="cb22-30"><a href="#cb22-30" tabindex="-1"></a>  resultado <span class="ot">&lt;-</span> resultado <span class="sc">%&gt;%</span> </span>
+<span id="cb22-31"><a href="#cb22-31" tabindex="-1"></a>    <span class="fu">select</span>(Muestreo_numero,media_muestral,desvio_muestral)</span>
+<span id="cb22-32"><a href="#cb22-32" tabindex="-1"></a>  </span>
+<span id="cb22-33"><a href="#cb22-33" tabindex="-1"></a>  <span class="fu">return</span>(resultado)</span>
+<span id="cb22-34"><a href="#cb22-34" tabindex="-1"></a>}</span></code></pre></div>
+<p>Ahora aplicamos la función generalizadora para tomar 1000 muestras de
+tamaño 10, de la variable normal con media <span
+class="math inline">\(\mu=0\)</span> y desvío <span
+class="math inline">\(\sigma=1\)</span></p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co">#cantidad de iteraciones</span></span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co">#tamaño de muestra</span></span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">simulacion</span>(I,n,mu,sigma)</span>
+<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a><span class="fu">head</span>(m)</span></code></pre></div>
+<pre class="fondo-salida"><code>##   Muestreo_numero media_muestral desvio_muestral
+## 1               1     0.05015372       0.7449338
+## 2               2    -0.12684357       0.8934336
+## 3               3    -0.42796020       0.8068114
+## 4               4    -0.01795588       0.9009502
+## 5               5     0.27956614       1.1238742
+## 6               6    -0.06176329       1.1509196</code></pre>
+<p>Graficamos un histograma de las medias…</p>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> m, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>media_muestral))<span class="sc">+</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..),</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>                 <span class="at">colour =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">lwd =</span> <span class="dv">1</span>,<span class="at">colour=</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>g</span></code></pre></div>
+<p><img src="Funcion-normal-segunda-parte_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>Repetimos: tomar 1000 muestras de tamaño 100, de la variable normal
+con media <span class="math inline">\(\mu=0\)</span> y desvío <span
+class="math inline">\(\sigma=1\)</span>.</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co">#cantidad de iteraciones</span></span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co">#tamaño de muestra</span></span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">simulacion</span>(I,n,mu,sigma)</span>
+<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a><span class="fu">head</span>(m)</span></code></pre></div>
+<pre class="fondo-salida"><code>##   Muestreo_numero media_muestral desvio_muestral
+## 1               1    -0.11156163       0.9577132
+## 2               2     0.08389017       0.9683593
+## 3               3     0.10659613       1.0659312
+## 4               4     0.08786761       0.8613511
+## 5               5     0.08008280       0.8501885
+## 6               6     0.07880916       0.8883184</code></pre>
+<p>Graficamos un histograma de las medias</p>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> m, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>media_muestral))<span class="sc">+</span></span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..),</span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>                 <span class="at">colour =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">lwd =</span> <span class="dv">1</span>,<span class="at">colour=</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a>g</span></code></pre></div>
+<p><img src="Funcion-normal-segunda-parte_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>Con estos ejemplos, observamos que cada muestra aporta un valor de
+media. Los valores de media, tienden a distribuirse normalmente.</p>
+<p>Esto nos conduce a pensar que la media es una variable aleatoria que
+se distribuye normalmente.</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
