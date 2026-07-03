@@ -12,6 +12,5 @@ Bienvenido. Aquí puedes encontrar los archivos disponibles para su consulta y d
 * [Descargar Base: Insurance](insurance.csv)
 
 ### 📄 Documentos PDF
-* [Descargar: ]
 * 📝 [Descargar: Trabajo Práctico Reciprocidad Polar](TPN4_RECIPROCIDAD_POLAR.pdf)
 
